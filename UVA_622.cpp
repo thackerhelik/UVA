@@ -1,5 +1,6 @@
 /*
-
+Parse according to the given grammar. Use recursion and check all the possible ways.
+If unknown input or does not follow grammar then print ERROR
 */
 
 #include <bits/stdc++.h>
