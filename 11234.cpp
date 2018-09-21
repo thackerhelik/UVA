@@ -32,24 +32,20 @@ int main(){
     	for(i = 0; i < 10005; ++i)arr[i][0] = arr[i][1] = -1;
     	int root = -1;
     	cin >> s;
-    	stack<pair<string,int>>st;
+    	stack<int>st;
     	for(i = 0; i < sz(s); ++i){
     		if(isupper(s[i])){
-    			pair<string,int>seconds = st.top(); st.pop();
-    			pair<string,int>firsts = st.top(); st.pop();
+    			int seconds = st.top(); st.pop();
+    			int firsts = st.top(); st.pop();
     			root = i;
-    			arr[i][0] = firsts.se;
-    			arr[i][1] = seconds.se;
-    			string temp = firsts.fi + s[i] + seconds.fi;
-    			st.push({temp, i});
+    			arr[i][0] = firsts;
+    			arr[i][1] = seconds;
+    			st.push(i);
     		}
     		else{
-    			string temp = "";
-    			temp.pb(s[i]);
-    			st.push({temp, i});
+    			st.push(i);
     		}
     	}
-    	pair<string,int>res = st.top(); st.pop();
     	string ans;
     	queue<int>q;
     	q.push(root);
