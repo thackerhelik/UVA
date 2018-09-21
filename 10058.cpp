@@ -31,19 +31,6 @@ bool statement(){
 		else return false;
 	}
 	else return false;
-	// else{
-	// 	cout << cur << endl;
-	// 	exit(0);
-	// 	if(statement()){
-	// 		if((cur + 2) < sz(s) && s[cur] == ' ' && s[cur + 1] == ',' && s[cur + 2] == ' '){
-	// 			if(action()){
-	// 				return true;
-	// 			}
-	// 		}
-	// 		return false;
-	// 	}
-	// }
-	// return false;
 }
 
 bool action(){
@@ -61,20 +48,15 @@ bool action(){
 				}
 			}
 		}
-		// else return true;
 	}
 	return false;
 }
 
 bool active_list(){
 	if(actor()){
-		// cout << cur << endl;
-		// cout << s[cur+2] << endl;
 		if((cur + 4) < sz(s) && s[cur] == ' ' && s[cur + 1] == 'a' && s[cur + 2] == 'n' && s[cur + 3] == 'd' && s[cur + 4] == ' '){
 			cur = cur + 5;
-			// cout << s[cur] << endl;
 			if(active_list()){
-				// cout << cur << " " << sz(s) << endl;
 				return true;
 			}
 			else return false;
@@ -82,23 +64,6 @@ bool active_list(){
 		return true;
 	}
 	return false;
-	// else{
-	// 	// 		cout << cur << endl;
-	// 	// exit(0);
-	// 	if(active_list()){
-	// 	// 			cout << cur << endl;
-	// 	// exit(0);
-	// 		if((cur + 4) < sz(s) && s[cur] == ' ' && s[cur + 1] == 'a' && s[cur + 2] == 'n' && s[cur + 3] == 'd' && s[cur + 4] == ' '){
-	// 			// cout << 'h' << endl;
-	// 			if(actor()){
-	// 				return true;
-	// 			}
-	// 		}
-	// 	}
-	// 	// 		cout << cur << endl;
-	// 	// exit(0);
-	// 	return false;
-	// }
 }
 
 bool actor(){
@@ -106,11 +71,7 @@ bool actor(){
 		return true;
 	}
 	else{
-		// cout << cur << endl;
-		// exit(0);
 		if(article()){
-			// cout << cur << endl;
-			// exit(0);
 			if(cur < sz(s) && s[cur] == ' '){
 				cur = cur + 1;
 				if(noun()){
@@ -118,8 +79,6 @@ bool actor(){
 				}
 			}
 		}
-		// cout << cur << endl;
-		// exit(0);
 		return false;
 	}
 }
@@ -139,8 +98,6 @@ bool article(){
 }
 
 bool noun(){
-	// cout << cur << " " << s[cur] << " " << "haha" << endl;
-	// exit(0);
 	if((cur + 2) < sz(s) && s[cur] == 't' && s[cur + 1] == 'o' && s[cur + 2] == 'm'){
 		cur = cur + 3;
 		return true;
@@ -223,7 +180,6 @@ bool verb(){
 int main(){
 	while(getline(cin, s, '\n')){
 		cur = 0;
-		// cout << s << " -- ";
 		if(statement() && cur >= sz(s)){
 			cout << "YES I WILL" << endl;
 		}
