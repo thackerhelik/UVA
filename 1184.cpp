@@ -1,15 +1,5 @@
 /*input
-2
-4
-3
-3 4
-1 3
-2 3
-3
-3
-1 3
-1 2
-2 3
+This is Minimum path cover problem. Can be solved by maximum cardinality bipartite matching.
 */
 #include <bits/stdc++.h>
 
@@ -32,7 +22,6 @@ vector<vector<int>>adj;
 int match[MAXN], vis[MAXN];
 
 int aug(int node){
-	cout << node << endl;
 	if(node == -1)return 1;
 	for(auto it: adj[node]){
 		if(vis[it])continue;
